@@ -3,4 +3,18 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="regions">
+        <item>NA</item>
+        <item>EUW</item>
+        <item>EUNE</item>
+        <item>BR</item>
+        <item>KR</item>
+        <item>LAN</item>
+        <item>LAS</item>
+        <item>OCE</item>
+        <item>RU</item>
+        <item>TR</item>
+    </string-array>
+    <string name="title_activity_menu_vc">MenuVC</string>
 </resources>

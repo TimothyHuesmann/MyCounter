@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Username:"
+        android:text="LoL Username:"
         android:id="@+id/usernameLabel_MainVC"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
@@ -39,7 +39,13 @@
         android:layout_height="wrap_content"
         android:text="Enter"
         android:id="@+id/enterButton_MainVC"
-        android:layout_marginTop="81dp"
+        android:layout_marginTop="72dp"
         android:layout_below="@+id/usernameTF_MainVC"
-        android:layout_alignStart="@+id/usernameLabel_MainVC" />
+        android:layout_centerHorizontal="true" />
+    <Spinner
+        android:id="@+id/regionSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
 </RelativeLayout>

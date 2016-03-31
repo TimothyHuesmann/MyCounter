@@ -17,6 +17,7 @@ import com.android.volley.toolbox.Volley;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import android.content.Intent;
 
 
 import com.firebase.client.Firebase;
@@ -112,7 +113,9 @@ public class MainVC extends ActionBarActivity
                                 @Override
                                 public void onResponse(String response)
                                 {
-                                    System.out.println(response);
+                                    Intent intent = new Intent(getApplicationContext(), MenuVC.class);
+                                    intent.putExtra("statsJSON", response);
+                                    startActivity(intent);
                                 }
                             }, new Response.ErrorListener() {
                         @Override
