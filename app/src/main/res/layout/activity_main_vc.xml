@@ -46,6 +46,9 @@
         android:id="@+id/regionSpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
+        android:layout_below="@+id/usernameTF_MainVC"
+        android:textAlignment="center"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignStart="@+id/enterButton_MainVC" />
 
 </RelativeLayout>

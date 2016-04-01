@@ -17,19 +17,12 @@ import com.android.volley.toolbox.Volley;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.DefaultRetryPolicy;
 import android.content.Intent;
 
 
 import com.firebase.client.Firebase;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URI;
 
 
 public class MainVC extends ActionBarActivity
@@ -106,6 +99,7 @@ public class MainVC extends ActionBarActivity
                             RequestQueue queue = Volley.newRequestQueue(MainVC.this);
 
 
+
 // Request a string response from the provided URL.
                     StringRequest stringRequest = new StringRequest(Request.Method.GET, dataUrl,
                             new Response.Listener<String>()
@@ -115,6 +109,7 @@ public class MainVC extends ActionBarActivity
                                 {
                                     Intent intent = new Intent(getApplicationContext(), MenuVC.class);
                                     intent.putExtra("statsJSON", response);
+                                    intent.putExtra("username", usernameTF_MainVC.getText().toString());
                                     startActivity(intent);
                                 }
                             }, new Response.ErrorListener() {
@@ -124,6 +119,9 @@ public class MainVC extends ActionBarActivity
                            System.out.println("Error:"+ error);
                         }
                     });
+                    stringRequest.setRetryPolicy(new DefaultRetryPolicy(50000,
+                            DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 // Add the request to the RequestQueue.
                     queue.add(stringRequest);
                 }

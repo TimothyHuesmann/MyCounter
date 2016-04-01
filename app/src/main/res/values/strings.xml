@@ -17,4 +17,7 @@
         <item>TR</item>
     </string-array>
     <string name="title_activity_menu_vc">MenuVC</string>
+    <string name="title_activity_personal_stats_vc">PersonalStatsVC</string>
+    <string name="title_activity_counter_with_vc">CounterWithVC</string>
+    <string name="title_activity_counter_against_vc">CounterAgainstVC</string>
 </resources>

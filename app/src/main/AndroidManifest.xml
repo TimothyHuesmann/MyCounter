@@ -21,7 +21,16 @@
         </activity>
         <activity
             android:name=".MenuVC"
-            android:label="@string/title_activity_menu_vc"></activity>
+            android:label="@string/title_activity_menu_vc" />
+        <activity
+            android:name=".PersonalStatsVC"
+            android:label="@string/title_activity_personal_stats_vc" />
+        <activity
+            android:name=".CounterWithVC"
+            android:label="@string/title_activity_counter_with_vc" />
+        <activity
+            android:name=".CounterAgainstVC"
+            android:label="@string/title_activity_counter_against_vc"></activity>
     </application>
 
 </manifest>
