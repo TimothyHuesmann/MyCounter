@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Counter Against Champion"
         android:id="@+id/counterAgainstButton"
-        android:layout_marginTop="79dp"
+        android:layout_marginTop="47dp"
         android:layout_below="@+id/welcomeTextField"
         android:layout_centerHorizontal="true" />
 
@@ -30,19 +30,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Personal Statistics"
-        android:id="@+id/statsButton"
-        android:layout_marginTop="42dp"
-        android:layout_below="@+id/counterWithButton"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Logout"
         android:id="@+id/logoutButton"
-        android:layout_marginTop="46dp"
-        android:layout_below="@+id/statsButton"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -52,6 +42,55 @@
         android:text="Welcome,"
         android:id="@+id/welcomeTextField"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Personal Stats:"
+        android:id="@+id/textView3"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/winsTF"
+        android:layout_below="@+id/textView3"
+        android:layout_toStartOf="@+id/textView3"
+        android:layout_marginTop="45dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/killsTF"
+        android:layout_alignTop="@+id/winsTF"
+        android:layout_toEndOf="@+id/textView3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/turretsTF"
+        android:layout_below="@+id/killsTF"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/assistsTF"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/turretsTF"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

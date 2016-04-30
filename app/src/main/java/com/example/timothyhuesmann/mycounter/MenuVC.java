@@ -6,14 +6,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
-
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+import org.json.JSONObject;
 
 public class MenuVC extends ActionBarActivity
 {
@@ -21,9 +14,12 @@ public class MenuVC extends ActionBarActivity
     TextView welcomeTF;
     Button counterAgainstButton;
     Button counterWithButton;
-    Button statsButton;
     String username;
     String statistics;
+    TextView killsTF;
+    TextView assistsTF;
+    TextView turretsTF;
+    TextView winsTF;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -34,8 +30,33 @@ public class MenuVC extends ActionBarActivity
         statistics = intent.getStringExtra("stats");
         username = intent.getStringExtra("username");
         System.out.println(statistics);
+        killsTF = (TextView) findViewById(R.id.killsTF);
+        assistsTF = (TextView) findViewById(R.id.assistsTF);
+        turretsTF = (TextView) findViewById(R.id.turretsTF);
+        winsTF = (TextView) findViewById(R.id.winsTF);
+        try {
+            JSONObject stats = new JSONObject(statistics);
+            JSONObject statistics = stats.getJSONObject("stats");
+            String kills = statistics.getString("kills");
+            String wins = statistics.getString("wins");
+            String turrets = statistics.getString("totalTurrets");
+            String assists = statistics.getString("totalAssists");
+            String killsLabel = "Kills: " + kills;
+            String winsLabel = "Wins: " + wins;
+            String turretsLabel = "Turrets Destroyed: " + turrets;
+            String assistsLabel = "Assists: " + assists;
+            killsTF.setText(killsLabel);
+            winsTF.setText(winsLabel);
+            assistsTF.setText(assistsLabel);
+            turretsTF.setText(turretsLabel);
+        }
+        catch(Exception e)
+        {
+            System.out.println("WHY");
+        }
         welcomeTF = (TextView) findViewById(R.id.welcomeTextField);
-        welcomeTF.setText("Welcome, " + username);
+        String temp = "Welcome, " + username;
+        welcomeTF.setText(temp);
         addListenerOnButton();
     }
 
@@ -44,7 +65,6 @@ public class MenuVC extends ActionBarActivity
         logoutButton = (Button) findViewById(R.id.logoutButton);
         counterAgainstButton = (Button) findViewById(R.id.counterAgainstButton);
         counterWithButton = (Button) findViewById(R.id.counterWithButton);
-        statsButton = (Button) findViewById(R.id.statsButton);
 
         logoutButton.setOnClickListener(new View.OnClickListener()
         {
@@ -79,16 +99,6 @@ public class MenuVC extends ActionBarActivity
             }
         });
 
-        statsButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Intent i = new Intent(getApplicationContext(), PersonalStatsVC.class);
-                i.putExtra("stats", statistics);
-                startActivity(i);
-            }
-        });
     }
 
 }
