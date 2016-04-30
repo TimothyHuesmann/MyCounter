@@ -121,7 +121,8 @@ public class MainVC extends ActionBarActivity
                                                     public void onClick(DialogInterface dialog, int which) {
 
                                                     }
-                                                });
+                                                })
+                                                .show();
                                     }
                                 }
                             }, new Response.ErrorListener() {

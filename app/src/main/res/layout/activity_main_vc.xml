@@ -23,7 +23,8 @@
         android:id="@+id/usernameTF_MainVC"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:text="ZeroConsortium" />
+        android:text="ZeroConsortium"
+        android:textAlignment="center" />
 
     <TextView
         android:layout_width="wrap_content"

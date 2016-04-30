@@ -63,6 +63,7 @@ public class MenuVC extends ActionBarActivity
             {
                 // Instantiate the RequestQueue.
                 Intent i = new Intent(getApplicationContext(), CounterAgainstVC.class);
+                i.putExtra("username", username);
                 startActivity(i);
             }
         });
@@ -73,6 +74,7 @@ public class MenuVC extends ActionBarActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(getApplicationContext(), CounterWithVC.class);
+                i.putExtra("username", username);
                 startActivity(i);
             }
         });

@@ -27,7 +27,8 @@
         android:id="@+id/champLabel"
         android:layout_marginTop="68dp"
         android:layout_below="@+id/whichLabel"
-        android:layout_alignStart="@+id/option1" />
+        android:layout_alignParentStart="false"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -53,9 +54,17 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
-        android:id="@+id/textView6"
+        android:id="@+id/option3"
         android:layout_marginTop="46dp"
         android:layout_below="@+id/option2"
         android:layout_alignStart="@+id/option2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/detailBackButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
