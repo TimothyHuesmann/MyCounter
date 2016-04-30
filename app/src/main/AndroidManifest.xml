@@ -30,7 +30,10 @@
             android:label="@string/title_activity_counter_with_vc" />
         <activity
             android:name=".CounterAgainstVC"
-            android:label="@string/title_activity_counter_against_vc"></activity>
+            android:label="@string/title_activity_counter_against_vc" />
+        <activity
+            android:name=".DetailVC"
+            android:label="@string/title_activity_detail_vc"></activity>
     </application>
 
 </manifest>

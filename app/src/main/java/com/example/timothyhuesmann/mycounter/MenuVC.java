@@ -7,6 +7,14 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
 
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 public class MenuVC extends ActionBarActivity
 {
     Button logoutButton;
@@ -14,6 +22,8 @@ public class MenuVC extends ActionBarActivity
     Button counterAgainstButton;
     Button counterWithButton;
     Button statsButton;
+    String username;
+    String statistics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -21,11 +31,11 @@ public class MenuVC extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_vc);
         Intent intent = getIntent();
-        String statistics = intent.getStringExtra("statsJSON");
-        String username = intent.getStringExtra("username");
+        statistics = intent.getStringExtra("stats");
+        username = intent.getStringExtra("username");
         System.out.println(statistics);
         welcomeTF = (TextView) findViewById(R.id.welcomeTextField);
-        welcomeTF.setText("Welcome," + username);
+        welcomeTF.setText("Welcome, " + username);
         addListenerOnButton();
     }
 
@@ -51,7 +61,9 @@ public class MenuVC extends ActionBarActivity
             @Override
             public void onClick(View v)
             {
-
+                // Instantiate the RequestQueue.
+                Intent i = new Intent(getApplicationContext(), CounterAgainstVC.class);
+                startActivity(i);
             }
         });
 
@@ -60,7 +72,8 @@ public class MenuVC extends ActionBarActivity
             @Override
             public void onClick(View v)
             {
-
+                Intent i = new Intent(getApplicationContext(), CounterWithVC.class);
+                startActivity(i);
             }
         });
 
@@ -69,7 +82,9 @@ public class MenuVC extends ActionBarActivity
             @Override
             public void onClick(View v)
             {
-
+                Intent i = new Intent(getApplicationContext(), PersonalStatsVC.class);
+                i.putExtra("stats", statistics);
+                startActivity(i);
             }
         });
     }

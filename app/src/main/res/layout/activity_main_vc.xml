@@ -22,7 +22,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/usernameTF_MainVC"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="ZeroConsortium" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/usernameTF_MainVC"
         android:textAlignment="center"
-        android:layout_alignEnd="@+id/textView"
-        android:layout_alignStart="@+id/enterButton_MainVC" />
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
 
 </RelativeLayout>

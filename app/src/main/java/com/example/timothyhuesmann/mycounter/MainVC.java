@@ -108,9 +108,21 @@ public class MainVC extends ActionBarActivity
                                 public void onResponse(String response)
                                 {
                                     Intent intent = new Intent(getApplicationContext(), MenuVC.class);
-                                    intent.putExtra("statsJSON", response);
-                                    intent.putExtra("username", usernameTF_MainVC.getText().toString());
-                                    startActivity(intent);
+                                    if(response != null) {
+                                        intent.putExtra("username", usernameTF_MainVC.getText().toString());
+                                        intent.putExtra("stats", response);
+                                        startActivity(intent);
+                                    }
+                                    else{
+                                        new AlertDialog.Builder(MainVC.this)
+                                            .setMessage("Error Retrieving Information, Please confirm you have a LoL account and try again.")
+                                                .setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialog, int which) {
+
+                                                    }
+                                                });
+                                    }
                                 }
                             }, new Response.ErrorListener() {
                         @Override
